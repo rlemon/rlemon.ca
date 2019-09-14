@@ -1,14 +1,13 @@
 .app-root {
-    font-family: 'Roboto', sans-serif;
-}
-
-.app-root,
-.container {
     height: 100%; 
-    width: 100%; 
-}
-
-.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 105px auto 210px;
+    grid-template-areas: 
+        "header"
+        "content"
+        "footer";
     background-color: desaturate(lighten($theme--color1, 15%), 10%);
     background-image:
     repeating-linear-gradient(120deg, rgba(0,0,0,.1), rgba(0,0,0,.1) 1px, transparent 1px, transparent 60px),
@@ -19,26 +18,30 @@
 }
 
 header {
-    width: 100%; 
-    height: 105px;
+    grid-area: header;
     border-bottom: 2px solid $black;
-    position: relative;
     background: $darkBlack;
-    .circle-photo,
-    h2 {
-        position: absolute;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     .circle-photo {
+        align-self: flex-end;
         background: url(../images/me_juicebox.jpg);
         background-size: cover;
         background-repeat: none;
         background-position: top center;
         height: 120px;
         width: 120px;
-        bottom: -55px;
-        left: calc( 50% - 60px );
+        border-radius: 50%; 
+        border: 4px solid $black;
+        margin: 0 auto;
+        margin-bottom: -55px;
     }
     h2 { 
+        align-self: flex-start;
+        flex: 1;
+        width: 100%;
         color: #dedede;
         letter-spacing: 1px;
         font-size: 2rem;
@@ -51,12 +54,13 @@ header {
 }
 
 section.content {
-    min-height: calc( 100% - 315px ); // 105 + 210
-    height: calc( 100% - 315px ); // 105 + 210
+    grid-area: content;
+    display: flex;
+    width: 100%;
 }
 
 footer {
-    height: 195px;
+    grid-area: footer;
     margin-top: 15px;
     background: $darkBlack;
     color: $white;
@@ -70,88 +74,5 @@ footer {
     span {
         align-self: flex-end;
         padding: 10px;
-    }
-}
-
-.circle-photo {
-    border-radius: 50%;
-    border: 4px solid $black;
-}
-
-.content-panel-container {
-    height: 100%; 
-    width: 100%; 
-    padding: 3.8rem 4rem;
-    .content-panel-menu-trigger {
-        position: absolute;
-        top: 83px;
-        right: 75px;
-        &::after {
-            content:'===';
-            color: $white;
-        }
-    }
-    .content-panel { 
-        background: $darkBlack;
-        border: 2px solid $black;
-        &.nav {
-            display: none;
-            &.open {
-                display: block;
-                width: 100%;
-                min-height: 30%;
-            }
-            ul {
-                list-style: none;
-                display: flex;
-                height: 100%;
-                flex-direction: column;
-                li {
-                    height: 100%;
-                    width: 100%;
-                    flex: 1;
-                    padding: 0.3rem 1rem;
-                    color: $white;
-                    &:hover {
-                        background: rgba(255,255,255,0.2);
-                    }
-                }
-            }
-        }
-        &.body {
-            height: 100%;
-            &.nav-open {
-                height: 70%;
-            }
-        }
-    }
-}
-
-@media( min-width: $breakpoint-tablet ) {
-    .content-panel-menu-trigger {
-        display: none;
-    }
-    .content-panel-container {
-        padding: 3.8rem 8rem;
-        display: flex;
-        justify-content: space-between;
-        .content-panel {
-            &.nav {
-                display: inline-block;
-                flex: 1;
-                height: 30%;
-            }
-            &.body {
-                flex: 4;
-                margin-left: 2rem;
-                height: 100%;
-            }
-        }
-    }
-}
-
-@media( min-width: $breakpoint-desktop ) {
-    .content-panel-container {
-        padding: 3.8rem 14rem;
     }
 }

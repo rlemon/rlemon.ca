@@ -10,19 +10,30 @@ export default class Layout extends React.Component {
     }
     render() {
         return (
-            <div
-                className='container'
-            >
+            <>
                 <header>
+                    <h2>Robert Lemon</h2>
                     <div
                         className='circle-photo'
                     />
-                    <h2>Robert Lemon</h2>
                 </header>
                 <section
                     className='content'
                 >
-                    <div
+                   
+                </section>
+                <footer>
+                    <span>
+                        &copy; {new Date().getFullYear()} rlemon.ca
+                    </span>
+                </footer>
+            </>
+        );
+    }
+}
+
+/*
+ <div
                         className='content-panel-container'
                     >
                         <div
@@ -56,13 +67,4 @@ export default class Layout extends React.Component {
                             {this.props.children}
                 </div>
                     </div>
-                </section>
-                <footer>
-                    <span>
-                        &copy; {new Date().getFullYear()} rlemon.ca
-                    </span>
-                </footer>
-            </div>
-        );
-    }
-}
+                    */
