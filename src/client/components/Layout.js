@@ -14,13 +14,46 @@ export default class Layout extends React.Component {
                 <header>
                     <h2>Robert Lemon</h2>
                     <div
-                        className='circle-photo'
+                        className={`circle-photo ${this.menuIsOpen ? 'small' : '' }`}
                     />
                 </header>
                 <section
                     className='content'
                 >
-                   
+                    <div
+                        className={`inner-content ${this.menuIsOpen ? '' : 'menu-closed'}`}
+                    >
+                        <div
+                            className='menu-toggle'
+                            onClick={this.toggleMenu}
+                        >
+                            ☰
+                        </div>
+                        <div
+                            className='menu'
+                        >
+                            <ul>
+                                <li>
+                                    home
+                                </li>
+                                <li>
+                                    programming
+                                </li>
+                                <li>
+                                    3d
+                                </li>
+                                <li>
+                                    crafty
+                                </li>
+                                <li>
+                                    contact
+                                </li>
+                            </ul>
+                        </div>
+                        <div className='body'>
+                            body content
+                        </div>
+                    </div>
                 </section>
                 <footer>
                     <span>
