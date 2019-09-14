@@ -2,8 +2,9 @@
 	height: 100%; 
 	width: 100%;
 	display: grid;
+	font-family: 'Roboto', sans-serif;
 	grid-template-columns: 100%;
-	grid-template-rows: 105px auto 210px;
+	grid-template-rows: 105px auto 98px;
 	grid-template-areas: 
 		"header"
 		"content"
@@ -108,6 +109,9 @@ section.content {
 		}   
 		.body {
 			grid-area: body;
+			background: $darkBlack;
+			color: $white;
+			margin: 0.1rem 0.4rem 1rem 0.4rem;
 		} 
 	}
 }
@@ -132,10 +136,13 @@ footer {
 
 
 @media( min-width: $breakpoint-tablet ) {
+	.app-root {
+		grid-template-rows: 105px auto 145px;
+	}
 	section.content {
 		padding: 3.7rem 8rem;
 		.inner-content {
-			grid-template-columns: 30% 70%;
+			grid-template-columns: 200px auto;
 			grid-template-rows: max-content auto;
 			grid-template-areas: 
 				"menu body"
@@ -157,8 +164,6 @@ footer {
 			}
 			.body {
 				margin-left: 1.4rem;
-				background: $darkBlack;
-				color: $white;
 				padding: 1rem;
 			}
 		}
@@ -166,7 +171,15 @@ footer {
 }
 
 @media( min-width: $breakpoint-desktop ) {
+	.app-root {
+		grid-template-rows: 105px auto 210px;
+	}
 	section.content {
 		padding: 3.7rem 14rem;
+		.inner-content {
+			.body {
+				margin-left: 2.8rem;
+			}
+		}
 	}
 }
