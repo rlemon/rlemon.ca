@@ -16,8 +16,8 @@ document.body.appendChild(root);
 configure({ enforceActions: 'always' });
 
 ReactDOM.render(
-    <Provider {...stores}>
-        {routes}
-    </Provider>, 
-    root
+	<Provider {...stores}>
+		{routes}
+	</Provider>, 
+	root
 );
