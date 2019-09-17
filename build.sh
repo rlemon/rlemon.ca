@@ -15,3 +15,4 @@ webpack
 # copy over configs needed at runtime
 echo "moving files that need moving"
 cp knexfile.js lib/knexfile.js
+cp -r src/client/stls lib/static/assets

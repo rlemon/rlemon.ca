@@ -99,10 +99,23 @@ section.content {
 					height: 100%;
 					width: 100%;
 					flex: 1;
-					padding: 0.3rem 1rem;
 					color: $white;
-					&:hover {
-						background: rgba(255,255,255,0.2);
+					a {
+						text-decoration: none;
+						height: 100%; 
+						width: 100%;
+						padding: 0.3rem 1rem;
+						color: inherit;
+						display: block;
+						&:hover {
+							background: rgba(255,255,255,0.2);
+						}
+						&.active {
+							background: rgba(255,255,255,0.1);
+							&:hover {
+								cursor: default;
+							}
+						}
 					}
 				}
 			}

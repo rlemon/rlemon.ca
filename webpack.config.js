@@ -39,7 +39,7 @@ const config = {
 				]
 			},
 			{
-				test: /.(png|jpe?g|gif|svg)$/,
+				test: /.(png|jpe?g|gif|svg|stl)$/,
 				use: [
 					{
 						loader: 'file-loader',
