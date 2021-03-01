@@ -42,7 +42,7 @@
     "react-router": "^3.2.4",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
-    "three": "^0.72.0",
+    "three": "^0.125.0",
     "three-orbit-controls": "^72.0.0",
     "ws": "^7.1.2"
   }
